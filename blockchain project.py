@@ -1,9 +1,9 @@
 import hashlib
-def hashGenerator(data):
+def hashGenerator(data):  #helper function to generate SHA256 hash
     result=hashlib.sha256(data.encode())
     return result.hexdigest()
 
-class Block:
+class Block:    
     def __init__(self,data,hash,prev_hash):
         self.data=data
         self.hash=hash
@@ -26,7 +26,7 @@ class Blockchain:
 ad=Blockchain()
 ad.add_block('1')
 ad.add_block('2')
-ad.add_block('3')
+ad.add_block('3')  # 3 block system
 
 for block in ad.chain:
     print(block.__dict__)  
